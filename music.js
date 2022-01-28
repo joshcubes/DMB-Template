@@ -20,14 +20,13 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
        if(cmd === 'music') {
-           message.channel.send('java.net.unknownhostexception_api.hub.confluent.io#283743297324834723.discord.js.api.updaterequired.contact_the_bot_administrator_to_update')
+           message.channel.send('TOONZ')
        }
        if(cmd === 'play'){
            if (!args.length) return message.channel.send('You need to send a song/link!');
            let song = {};
 
            if (ytdl.validateURL(args[0])){
-               console.log("URL Validated")
                const song_info = await ytdl.getInfo(args[0]);;
                song = { title: song_info.videoDetails.title, url: song_info.videoDetails.video_url, song_desc: song_info.videoDetails.description.slice(0, 500), song_author: song_info.videoDetails.author, song_thumbnail: 'https://www.htmlcsscolor.com/preview/16x16/32363C.png', song_views: song_info.videoDetails.viewCount,}
            } else{
