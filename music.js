@@ -3,13 +3,12 @@ const ytsearch = require('yt-search');
 const queue = new Map();
 const volume = 1;
 const Discord = require("discord.js");
-const message = require('../events/guild/message');
 
 module.exports = {
     name: 'music',
     aliases: ['play', 'skip', 'stop', 'queue', 'repeat'],
     cooldown: 10,
-    description: 'Big brain music',
+    description: 'music',
     async execute(client, message, args, cmd, Discord){
         const voice_channel = message.member.voice.channel;
         if(!voice_channel) return message.reply('You need to be in a voice channel for this command to work!');
@@ -20,7 +19,7 @@ module.exports = {
         const server_queue = queue.get(message.guild.id);
 
        if(cmd === 'music') {
-           message.channel.send('TOONZ')
+           message.channel.send('This Is A Music Command Wich Is Used With [Prefix]Play "Song"')
        }
        if(cmd === 'play'){
            if (!args.length) return message.channel.send('You need to send a song/link!');
@@ -75,7 +74,7 @@ module.exports = {
                 { name: 'Made By:', value: song.song_author.name, inline: true},
                             )
             .setTimestamp()
-            .setFooter('BY JOSHBOT WOOOO');
+            .setFooter('Joshcubes Music Bot Template On Github');
  
         message.channel.send(queueembed);
         }
@@ -114,7 +113,7 @@ const video_player = async (guild, song) =>{
             { name: 'Made By:', value: song.song_author.name, inline: true},
                         )
         .setTimestamp()
-        .setFooter('BY JOSHBOT WOOOO');
+        .setFooter('Joshcubes Music Bot Template On Github');
 
     song_queue.text_channel.send(nowplaying)
 }
@@ -192,7 +191,7 @@ const list_queue = (message, server_queue) =>{
             {name: '9', value: `${queuesongs[8].title}`},
             {name: '10', value: `${queuesongs[9].title}`},
         )
-        .setFooter('Made By JOSHBOT WOOOOOO!')
+        .setFooter('Joshcubes Music Bot Template On Github!')
 
         message.channel.send(QueueEmbed);
 
